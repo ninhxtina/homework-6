@@ -44,7 +44,7 @@ public class MyMiniSearchEngine {
                     temp.add(keyPhrase);
                 }
             }
-            return new ArrayList<>(); //placeholder
+            return (List<Integer>) ht; //hashtable can't cast to list
         }
     }
 }
