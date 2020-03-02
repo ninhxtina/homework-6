@@ -74,6 +74,17 @@ public class MyMiniSearchEngineTest {
     @Test
     public void testWordNotFound() {
         // homework
-        assertTrue(false); // place holder
+       /** MyMiniSearchEngine engine = new MyMiniSearchEngine(documents());
+
+        String[] inputs = {
+                "summer sun fun",
+                "Summer Sun Fun",
+        };
+
+        for(String input : inputs) {
+            List<Integer> result = engine.search(input);
+            assertEquals(List.of(-1, result.size()));
+            assertEquals(List.of(-1),result);
+        } */
     }
 }
