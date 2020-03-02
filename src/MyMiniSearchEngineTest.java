@@ -60,8 +60,8 @@ public class MyMiniSearchEngineTest {
         MyMiniSearchEngine engine = new MyMiniSearchEngine(documents());
 
         String[] inputs = {
-                "hello my name is",
-                "Hello my name is",
+                "sunday hello world fun",
+                "sunday Hello world fun",
         };
 
         for(String input : inputs) {
