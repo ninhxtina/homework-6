@@ -30,6 +30,11 @@ public class MyMiniSearchEngine {
     // return an empty list if search() finds no match in all documents.
     public List<Integer> search(String keyPhrase) {
         // homework
+        //if it can't find a match, return an empty list
+        if(keyPhrase == null) {
+            return new ArrayList<>();
+        }
+
         Hashtable<String, ArrayList<String>> ht = new Hashtable<String, ArrayList<String>>();
         while (true) {
             String[] result = keyPhrase.split("\\s"); //tokenizes the string into separate strings
