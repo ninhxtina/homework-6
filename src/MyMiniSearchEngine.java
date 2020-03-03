@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /** By: Christina Ninh
  * (https://www.daniweb.com/programming/software-development/threads/127733/help-to-design-a-simple-search-engine-in-java)
@@ -23,6 +20,20 @@ public class MyMiniSearchEngine {
     // assume documents only contain alphabetical words separated by white spaces.
     private void index(List<String> texts) {
         //homework
+        //insert key (string, list<list>integer>>
+        //hash key string into num
+        //indexes = hash, parse words correctly into the map
+        //word > document + location
+
+        //indexes = new Map<String,List<List<Integer>>>();
+
+        indexes = new HashMap<>();
+
+        //parse strings from texts to map
+        for(int i = 0; i < texts.size(); i++) {
+            String[] words = texts.get(i).split("\\s");
+        }
+
     }
 
     // search(key) return all the document ids where the given key phrase appears.
