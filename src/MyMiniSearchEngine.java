@@ -60,42 +60,43 @@ public class MyMiniSearchEngine {
             if (temp == null) {
                 return new ArrayList<>();
             }
-
-            for (int j = 0; j < location.size(); j++) {
-                if (location.get(j).isEmpty()) {
-                    temp.get(j).clear();
-                } else {
-                    for (int k = 0; k < temp.get(j).size(); k++) {
-                        int m = 0;
-                        while (location.get(j).get(m) < temp.get(j).get(k)) {
-                            m++;
-                            if (m >= location.get(j).size()) {
-                                break;
-                            }
-                            if (m > 0) {
-                                --m;
-                            }
-                            if (location.get(j).get(m) != (temp.get(j).get(k) - 1)) {
-                                temp.get(j).remove(k);
-                                k--;
+                for (int j = 0; j < location.size(); j++) {
+                    if (location.get(j).isEmpty()) {
+                        temp.get(j).clear();
+                    } else {
+                        for (int k = 0; k < temp.get(j).size(); k++) {
+                            int m = 0;
+                            while (location.get(j).get(m) < temp.get(j).get(k)) {
+                                m++;
+                                if (m >= location.get(j).size()) {
+                                    break;
+                                }
+                                if (m > 0) {
+                                    --m;
+                                }
+                                if (location.get(j).get(m) != (temp.get(j).get(k) - 1)) {
+                                    temp.get(j).remove(k);
+                                    k--;
+                                }
                             }
                         }
                     }
+                    location = temp;
+
                 }
-                location = temp;
-            }
+
+        }
             List<Integer> solution = new ArrayList<>();
             if (location == null) {
                 return solution; //should be an empty list
             }
-
-            for (int i = 0; i < location.size(); i++) {
-                if (!location.get(i).isEmpty()) {
-                    solution.add(i);
+            for (int n = 0; n < location.size(); n++) {
+                if (!location.get(n).isEmpty()) {
+                    solution.add(n);
                 }
             }
-            return solution;
-        }
+
+        return solution;
     }
 
     //strips the strings down to the conditions we want
