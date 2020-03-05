@@ -83,7 +83,8 @@ public class MyMiniSearchEngineTest {
 
         for(String input : inputs) {
             List<Integer> result = engine.search(input);
-
+            assertEquals(0, result.size());
+            assertEquals(List.of(0),result);
         }
 
     }
