@@ -86,5 +86,6 @@ public class MyMiniSearchEngineTest {
             assertEquals(List.of(-1, result.size()));
             assertEquals(List.of(-1),result);
         } */
+       assertTrue(false);//placeholder
     }
 }
