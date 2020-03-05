@@ -50,16 +50,15 @@ public class MyMiniSearchEngine {
         // homework
         String[] result = keyPhrase.split("\\s"); //tokenizes the line into separate strings based on spaces only
 
-        List<Integer> location = new ArrayList<>();
+        List<List<Integer>> location = indexes.get(result[0]);
 
         for(int i = 0; i < result.length; i++) {
-            if(!indexes.containsKey(keyPhrase)) {
-
-            } else {
-                return new ArrayList<>(); //return empty list if no matches
+            List<List<Integer>> temp = indexes.get(result[i]);
+            if(temp == null) {
+                return new ArrayList<>();
             }
         }
-        return location;
+        return new ArrayList<>(); //placeholder
     }
 }
 
