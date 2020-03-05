@@ -50,12 +50,37 @@ public class MyMiniSearchEngine {
         // homework
         String[] result = keyPhrase.split("\\s"); //tokenizes the line into separate strings based on spaces only
 
+        //key is case sensitive, finds all solutions for key
+        result[0] = stringHelper(result[0]);
         List<List<Integer>> location = indexes.get(result[0]);
 
-        for(int i = 0; i < result.length; i++) {
+        for(int i = 1; i < result.length; i++) {
+            result[i] = stringHelper(result[i]);
             List<List<Integer>> temp = indexes.get(result[i]);
             if(temp == null) {
                 return new ArrayList<>();
+                for(int j = 0; j < location.size(); j++) {
+                    if(location.get(j).isEmpty()) {
+                        temp.get(j).clear();
+                    } else {
+                        for(int k = 0; k < temp.get(j).size(); k++) {
+                            int m = 0;
+                            while(location.get(j).get(m) < temp.get(j).get(k)) {
+                                m++;
+                                if(m >= location.get(j).size()) {
+                                    break;
+                                }
+                                if( m > 0) {
+                                    --m;
+                                }
+                                if(location.get(j).get(m) != (temp.get(j).get(k)-1)) {
+                                    temp.get(j).remove(k);
+                                    k--;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
         return new ArrayList<>(); //placeholder
