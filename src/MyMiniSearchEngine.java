@@ -39,7 +39,6 @@ public class MyMiniSearchEngine {
                 indexes.get(words[j]).get(i).add(j);
             }
         }
-        System.out.println(indexes);
 
     }
 
