@@ -60,6 +60,13 @@ public class MyMiniSearchEngine {
         }
         return new ArrayList<>(); //placeholder
     }
+
+    //strips the strings down to the conditions we want
+    public static String stringHelper (String s) {
+        s = s.toLowerCase();
+        s = s.replaceAll("[^a-z]", "");
+        return s;
+    }
 }
 
 
